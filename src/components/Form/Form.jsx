@@ -30,8 +30,9 @@ const Form = ({submitSearch}) => {
     );
 };
 
+// eslint-disable-next-line no-unused-expressions
 Form.PropTypes - {
-    submitSearch:PropTypes.func.isRequired,
+    submitSearch:PropTypes.func.isRequired
 }
 
 export default Form;
