@@ -31,7 +31,7 @@ const Page = () => {
             {isLoading && <Loader/>}
             </div>)}
             {/**Forecast */}
-            {forecast && <Forecast forecast={}/>} 
+            {forecast && <Forecast forecast={forecast}/>} 
             
         </Fragment>
     );

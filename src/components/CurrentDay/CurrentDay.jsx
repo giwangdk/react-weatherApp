@@ -9,8 +9,21 @@ const CurrentDay = ({weekday, date, location, temperature, weatherIcon, weatherD
         <div className={styles.img}></div>
         <div className={styles.gradient}></div>
         <div className={`${styles.cardInner} d-flex flex-column justify-content-between pt-3 pb-2 pl-2`}>
-            <div></div>
-            <div></div>
+            <div>
+                <h2 className="font-weight-bold mb-1">{weekday}</h2>
+                <p className="mb">{date}</p>
+                <div className="d-flex align-items-baseline font-weight-lighter mb-1">
+                    <img src={locationIcon} className="mr-1" width="10" height="10" alt="location pin icon" />
+                    <span>{location}</span>
+                </div>
+            </div>
+            <div>
+                <img src={weatherIcon} alt="" />
+                <h2 className="font-weight-bold mb-1">
+                    <span>{temperature}</span>
+                </h2>
+                <h5 className="font-weight-light">{weatherDescription}</h5>
+            </div>
         </div>
     </div>
 );
@@ -20,8 +33,8 @@ CurrentDay.propTypes ={
     date:PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     temperature : PropTypes.number.isRequired,
-    weatherIcon : PropTypes.string.,
-    weatherDescription : PropTypes.string.isRequired;
+    weatherIcon : PropTypes.string.isRequired,
+    weatherDescription : PropTypes.string.isRequired
 }
 
 export default CurrentDay;

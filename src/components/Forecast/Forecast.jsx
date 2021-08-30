@@ -6,6 +6,7 @@ import styles from './Forecast.module.css';
 import PropTypes from 'prop-types';
 
 import CurrentDay from '../CurrentDay/CurrentDay';
+import CurrentDayDescription from '../CurrentDayDescription/CurrentDayDescription';
 
 const Forecast = ({forecast}) => (
     <Container className={styles.box}>
@@ -15,7 +16,9 @@ const Forecast = ({forecast}) => (
                     <CurrentDay {...forecast.currentDay}/>
                 </div>
             </Col>
-            <Col xs={12} md={8} className="d-flex flex-column justify-content-between"></Col>
+            <Col xs={12} md={8} className="d-flex flex-column justify-content-between">
+                <CurrentDayDescription forecast={forecast.currentDayDetails}/>
+            </Col>
         </Row>
     </Container>
 );
@@ -24,7 +27,7 @@ Forecast.propTypes= {
     forecast:PropTypes.shape({
         currentDay:PropTypes.object,
         currentDayDetails : PropTypes.array,
-        upcomingDays:PropTypes.array,
+        upcomingDays:PropTypes.array
     })
 }
 
